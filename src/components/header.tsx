@@ -1,7 +1,11 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-const Header = () => {
+interface HeaderProps {
+  onClick: () => void;
+}
+const Header = (props:Partial<HeaderProps>) => {
+  const {onClick=()=>{}}=props;
   return (
     <header className='text-gray-600 body-font'>
       <div className='container mx-auto flex  p-5 flex-col md:flex-row items-center'>
@@ -9,12 +13,14 @@ const Header = () => {
           <div>
             <Image width={50} height={50} src='/img/bag.png' alt='' />
           </div>
-          <div className='hidden space-x-8 lg:flex'>
+          <div className='hidden space-x-8 sm:flex'>
+          
             <a href='/'>Home</a>
             <a href='#'>Categories</a>
             <a href='#'>Rewards</a>
+            
           </div>
-          <div className='flex lg:hidden'>
+          <div className='flex sm:hidden' onClick={onClick}>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               className='w-6 h-6'
