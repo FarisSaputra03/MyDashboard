@@ -30,7 +30,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <div
-          className={`  h-60 w-full p-2 bg-white fixed ${
+          className={`  h-60 w-full p-2 bg-gray-400 fixed ${
             showMenu ? "flex flex-col" : "hidden"
           }`}>
           <div className="flex  justify-between">

@@ -3,7 +3,7 @@ import Image from "next/image";
 import { BsCart4 } from "react-icons/bs";
 export default function Details() {
   return (
-    <div className=" m-8 w-full">
+    <div className=" m-8">
       {/* <div className='flex flex-row justify-between'>
         <h1 className='text-2xl font-medium'>Coffe</h1>
         <div className='flex gap-5 flex-row'>
