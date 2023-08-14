@@ -90,8 +90,8 @@ export default function DetailsTransactions() {
             <p className="text-black font-medium">Indonesia</p>
           </div>
         </div>
-        <div className="relative mb-4">
-          <label className="countries block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+        <div className="mb-40">
+          <label className="countries block mb-1 text-sm font-medium text-gray-900 dark:text-white">
             Category
           </label>
           <select
@@ -104,6 +104,11 @@ export default function DetailsTransactions() {
             <option value="Ti">Topi</option>
           </select>
         </div>
+      </div>
+      <div>
+        <button className="w-40 text-white bg-green-500 border-0 mt-5 py-2 px-8 focus:outline-none hover:bg-green-600 rounded-lg text-lg">
+          Save Now
+        </button>
       </div>
     </div>
   );
