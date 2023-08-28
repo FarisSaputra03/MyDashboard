@@ -1,14 +1,59 @@
+'use client'
+import { usePathname } from 'next/navigation'
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { BsCart4 } from "react-icons/bs";
 interface NavbarProps {
   onClick: () => void;
 }
 
 export default function Navbar(props: Partial<NavbarProps>) {
+  const params = usePathname()
   const { onClick = () => {} } = props;
+  // console.log("navbar")
+  // console.log(params)
+  const [title,setTitle] = useState("");
+
+const changeTitle=()=>{
+ if(params=="/myproducts" ){
+  setTitle("My Products")
+  return
+ };
+ if(params=="/dashboard" ){
+  setTitle("Dashboard")
+  return
+ };
+ if(params=="/transactions" ){
+  setTitle("Transactions")
+  return
+ };
+ if(params=="/storesettings" ){
+  setTitle("Store Settings")
+  return
+ };
+ if(params=="/myaccount" ){
+  setTitle("My Account")
+  return
+ };
+ if(params=="/details" ){
+  setTitle("Details Product")
+  return
+ };
+ if(params=="/detailstrasactions" ){
+  setTitle("Details Transactions")
+  return
+ };
+ if(params=="/create-product" ){
+  setTitle("Create Product")
+  return
+ };
+}
+
+  useEffect(() => {
+    changeTitle();
+  });
   return (
-    <div className=" m-8 w-full">
+    <div className="mx-8 mt-8 w-full">
       <div className="flex flex-row justify-between">
         <div className="flex gap-5 items-center">
           <div className="flex " onClick={onClick}>
@@ -26,7 +71,9 @@ export default function Navbar(props: Partial<NavbarProps>) {
               />
             </svg>
           </div>
-          <h1 className="text-2xl font-medium">Dashboard</h1>
+          <h1 className="text-2xl font-medium">{
+            title
+          }</h1>
         </div>
         <div className="flex gap-5 flex-row">
           <div>
@@ -38,7 +85,7 @@ export default function Navbar(props: Partial<NavbarProps>) {
           </p>
         </div>
       </div>
-      <div className="mb-20">
+      <div className="">
         <p className="text-gray-400">Look what you have made today!</p>
       </div>
     </div>

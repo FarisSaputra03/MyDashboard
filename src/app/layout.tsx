@@ -60,9 +60,10 @@ export default function RootLayout({
           <></>
         )}
 
-        <div className={` flex`}>
+        <div className={`flex`}>
           {pathname !== "/" &&
           pathname !== "/signup" &&
+          pathname !== "/shopping" &&
           pathname !== "/welcome" ? (
             <div
               className={`${sidebar ? "flex " : "hidden"} flex justify-center`}>
@@ -72,10 +73,11 @@ export default function RootLayout({
             <></>
           )}
 
-          <div className={`${sidebar ? "pl-64" : ""} w-screen`}>
+          <div className={`${sidebar ? "" : ""} w-screen`}>
             <div className="flex justify-center">
               {pathname !== "/" &&
               pathname !== "/signup" &&
+              pathname !== "/shopping" &&
               pathname !== "/welcome" ? (
                 <Navbar onClick={() => setSideBar(!sidebar)} />
               ) : (
@@ -86,7 +88,10 @@ export default function RootLayout({
           </div>
         </div>
 
-        {pathname == "/" || pathname == "/signup" ? <Footer /> : <></>}
+        {pathname == "/" ||
+        pathname == "/shopping" ||    
+        pathname == "/signup" ? 
+         <Footer /> : <></>}
       </body>
     </html>
   );

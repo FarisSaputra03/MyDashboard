@@ -1,27 +1,8 @@
-import Link from "next/link";
 import React from "react";
 import Image from "next/image";
-import { BsCart4 } from "react-icons/bs";
 export default function DetailsTransactions() {
   return (
     <div className=" m-5">
-      {/* <div className='flex flex-row justify-between'>
-        <h1 className='text-2xl font-medium'>#STORE0839</h1>
-        <div className='flex gap-5 flex-row'>
-          <div>
-            <Image width={50} height={50} src='/img/human.jpeg' alt='' />
-          </div>
-          <h1 className='text-black font-medium'>Hi, User</h1>
-          <p>
-            <BsCart4 size='2rem' />
-          </p>
-        </div>
-      </div> */}
-      {/* <div className="flex gap-5 mb-20">
-        <p className="text-gray-400">Product</p>
-        <p className="text-gray-400">/</p>
-        <p className="text-gray-400 font-medium">Details</p>
-      </div> */}
       <div className=" gap-5 mx-auto flex px-1 py-1 md:flex-row">
         <Image width={200} height={200} src="/img/kopi.jpg" alt="" />
         <div className="flex flex-col">
@@ -44,7 +25,7 @@ export default function DetailsTransactions() {
             </div>
             <div className="pb-5">
               <h1 className="text-gray-400 font-medium">Payment Status</h1>
-              <p className="text-red-500 font-medium">Pending</p>
+              <p className="text-green-500 font-medium">Success</p>
             </div>
           </div>
           <div className="flex gap-32">
@@ -91,27 +72,36 @@ export default function DetailsTransactions() {
             <p className="text-black font-medium">Indonesia</p>
           </div>
         </div>
-        <div className="mb-5">
-          <label className="countries block mb-1 text-sm font-medium text-gray-900 dark:text-white">
-            Category
-          </label>
+        <div className="">
+        <label className="countries block mb-1 text-sm font-medium text-gray-900 dark:text-white">
+          Shopping Status
+          </label>  
+        <div className="mb-5 gap-4 flex">
           <select
             id="countries"
-            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-64 p-2.5 dark:bg-green-700 dark:border-green-600 dark:placeholder-green-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500">
-            <option selected>Select Category</option>
+            className="bg-gray-50 border h-11 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-64 p-2.5 dark:bg-green-700 dark:border-green-600 dark:placeholder-green-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500">
+            <option selected>Shopping Status</option>
             <option value="Ks">Kaos</option>
             <option value="Jt">Jacket</option>
             <option value="Su">Sepatu</option>
             <option value="Ti">Topi</option>
           </select>
+          <div className="relative mb-5">
+          <input
+            type="kode"
+            id="kode"
+            name="kode"
+            className="w-64 h-11 bg-white rounded-lg border border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+            placeholder=""
+          />
+        </div>
+        </div>
         </div>
       </div>
       <div className="flex justify-end">
-      <Link href={"/transactionsucces"}>
-      <button className="w-40 text-white bg-green-500 border-0 mt-5 py-2 px-8 focus:outline-none hover:bg-green-600 rounded-lg text-lg">
+        <button className="w-40 text-white bg-green-500 border-0 mt-5 py-2 px-8 focus:outline-none hover:bg-green-600 rounded-lg text-lg">
           Save Now
         </button>
-      </Link>
       </div>
     </div>
   );

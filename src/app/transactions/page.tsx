@@ -44,6 +44,7 @@ export default function Transactions() {
               role="tab">
               Sell Product
             </button>
+            <Link href={"/detailstrasactions"}>
             <button
               onClick={() => {
                 setSelectedTitle("Buy Product");
@@ -60,6 +61,7 @@ export default function Transactions() {
               role="tab">
               Buy Product
             </button>
+            </Link>
           </nav>
         </div>
       </div>

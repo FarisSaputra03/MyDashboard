@@ -23,9 +23,11 @@ const Page = () => {
               My dashboard
             </button>
           </Link>
+          <Link href={"/shopping"}>
           <button className='w-full text-white bg-gray-300 border-0 mt-5 py-2 px-8 focus:outline-none hover:bg-gray-400 rounded-lg text-lg'>
             Go to Shopping
           </button>
+          </Link>
         </div>
       </div>
     </div>

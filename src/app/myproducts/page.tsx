@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { BsCart4 } from "react-icons/bs";
 export default function MyProducts() {
   const listProduct = [
@@ -13,41 +14,41 @@ export default function MyProducts() {
       img: "/img/sepatu.jpg",
       title: "Sepatu",
       description: "Fashion",
-      href: "",
+      href: "/details",
     },
     {
       img: "/img/topi.jpg",
       title: "Topi",
       description: "Fashion",
-      href: "",
+      href: "/details",
     },
     {
       img: "/img/kemasan.jpg",
       title: "Kemasan Coffe",
       description: "Foods",
-      href: "",
+      href: "/details",
     },
     {
       img: "/img/sarung.jpg",
       title: "Kain Sarung",
       description: "Fashion",
-      href: "",
+      href: "/details",
     },
     {
       img: "/img/kaos kaki.jpeg",
       title: "Kaus Kaki",
       description: "Fashion",
-      href: "",
+      href: "/details",
     },
     {
       img: "/img/jam.jpg",
       title: "Jam tangan Pria/Wanita",
       description: "Fashion",
-      href: "",
+      href: "/details",
     },
   ];
   return (
-    <div className=" m-8">
+    <div className=" mx-8">
       {/* <div className='flex flex-row justify-between'>
         <h1 className='text-2xl font-medium'>My Products</h1>
         <div className='flex gap-5 flex-row'>
@@ -60,14 +61,16 @@ export default function MyProducts() {
           </p>
         </div>
       </div> */}
-      <div className="mb-20">
+      <div className="mb-5">
         {/* <p className='text-gray-400'>Manage it well and get money</p> */}
         <div>
+          <Link href={"/create-product"}>
           <button
             type="button"
             className="text-white bg-green-500 border-0 mt-6 py-2 px-8 focus:outline-none hover:bg-green-600 rounded-lg text-lg">
             Add New Product
           </button>
+          </Link>
         </div>
       </div>
 
