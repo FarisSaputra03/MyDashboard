@@ -64,6 +64,7 @@ export default function RootLayout({
           {pathname !== "/" &&
           pathname !== "/signup" &&
           pathname !== "/shopping" &&
+          pathname !== "/detail_pilih" &&
           pathname !== "/welcome" ? (
             <div
               className={`${sidebar ? "flex " : "hidden"} flex justify-center`}>
@@ -78,6 +79,7 @@ export default function RootLayout({
               {pathname !== "/" &&
               pathname !== "/signup" &&
               pathname !== "/shopping" &&
+              pathname !== "/detail_pilih" &&
               pathname !== "/welcome" ? (
                 <Navbar onClick={() => setSideBar(!sidebar)} />
               ) : (
@@ -89,7 +91,8 @@ export default function RootLayout({
         </div>
 
         {pathname == "/" ||
-        pathname == "/shopping" ||    
+        pathname == "/shopping" ||   
+        pathname == "/detail_pilih" ||  
         pathname == "/signup" ? 
          <Footer /> : <></>}
       </body>
