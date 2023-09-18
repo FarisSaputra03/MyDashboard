@@ -1,7 +1,72 @@
-import React from "react";
+"use client"
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { BsCart4 } from "react-icons/bs";
+import { useParams } from "next/navigation";
 export default function Detail_Pilih() {
+  const params = useParams();
+  const [selectProduk, setSelectProduk] = useState<any>([]);
+  const listProduct = [
+    {
+      id:1,
+      img: "/img/pic.jpg",
+      title: "Apple Watch 4",
+      price: "$890",
+    },
+    {
+      id:2,
+      img: "/img/pic (1).jpg",
+      title: "Orange Bogotta",
+      price: "$94,509",
+    },
+    {
+      id:3,
+      img: "/img/pic (2).jpg",
+      title: "Sofa Ternyaman",
+      price: "$1,409",
+    },
+    {
+      id:4,
+      img: "/img/pic (3).jpg",
+      title: "Bubuk Maketti",
+      price: "$225",
+    },
+    {
+      id:5,
+      img: "/img/pic (4).jpg",
+      title: "Tatakan Gelas",
+      price: "$45,184",
+    },
+    {
+      id:6,
+      img: "/img/pic (5).jpg",
+      title: "Mavic Kawe",
+      price: "$503",
+    },
+    {
+      id:7,
+      img: "/img/pic (6).jpg",
+      title: "Black Edition Nike",
+      price: "$70,482",
+    },
+    {
+      id:8,
+      img: "/img/pic (7).jpg",
+      title: "Monkey Toys",
+      price: "$783",
+    },
+  ];
+  const filterProduk = (title: any) => {
+    const filtered = listProduct.filter((item) => item.id.toString() === title);
+    setSelectProduk(filtered[0]);
+    console.log("chek");
+    console.log(filtered);
+  };
+  useEffect(() => {
+    filterProduk(params.id);
+  }, []);
+  console.log("check");
+  console.log(params.id);
   return (
     <div>
       {
@@ -34,11 +99,11 @@ export default function Detail_Pilih() {
           <div className="container px-5 py-24 mx-auto flex flex-col">
             <div className="lg:w-4/6 mx-auto">
               <div className="rounded-lg">
-              <Image width={1000} height={400} src="/img/pic (2).jpg" alt="" />
+              <Image width={1000} height={400} src={selectProduk.img} alt="" />
               </div>
               <div className="flex justify-between py-5">
                 <div>
-                <h1 className="text-black text-xl font-semibold">Sofa Ternyaman</h1>
+                <h1 className="text-black text-xl font-semibold">{selectProduk.title}</h1>
                 <p>By Galih Pratama</p>
                 </div>
                 <p></p>
@@ -47,7 +112,7 @@ export default function Detail_Pilih() {
                 </button>
               </div>
               <div>
-                <p className="text-orange-500 hover:text-orange-900 font-semibold">$1,409</p>
+                <p className="text-orange-500 hover:text-orange-900 font-semibold">{selectProduk.price}</p>
               </div>
             </div>
           </div>

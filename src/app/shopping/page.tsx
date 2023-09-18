@@ -1,50 +1,55 @@
+"use client";
+import Link from "next/link";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 export default function Shopping() {
+  const [selectedTitle, setSelectedTitle] = useState("");
+  const [listFiltered, setListFiltered] = useState<any>(null);
   const listProduct = [
     {
-      id:1,
+      id: 1,
       img: "/img/pic.jpg",
       title: "Apple Watch 4",
       price: "$890",
     },
     {
-      id:2,
+      id: 2,
       img: "/img/pic (1).jpg",
       title: "Orange Bogotta",
       price: "$94,509",
     },
     {
-      id:3,
+      id: 3,
       img: "/img/pic (2).jpg",
       title: "Sofa Ternyaman",
       price: "$1,409",
     },
     {
-      id:4,
+      id: 4,
       img: "/img/pic (3).jpg",
       title: "Bubuk Maketti",
       price: "$225",
     },
     {
-      id:5,
+      id: 5,
       img: "/img/pic (4).jpg",
       title: "Tatakan Gelas",
       price: "$45,184",
     },
     {
-      id:6,
+      id: 6,
       img: "/img/pic (5).jpg",
       title: "Mavic Kawe",
       price: "$503",
     },
     {
-      id:7,
+      id: 7,
       img: "/img/pic (6).jpg",
       title: "Black Edition Nike",
       price: "$70,482",
     },
     {
-      id:8,
+      id: 8,
       img: "/img/pic (7).jpg",
       title: "Monkey Toys",
       price: "$783",
@@ -76,6 +81,13 @@ export default function Shopping() {
       title: " Baby",
     },
   ];
+  const filterProduk = (title: any) => {
+    const filtered = listProduct.filter((item) => item.title === title);
+    setListFiltered(filtered);
+  };
+  useEffect(() => {
+    filterProduk(selectedTitle);
+  }, []);
   return (
     <div className="text-gray-600 body-font">
       {
@@ -143,18 +155,18 @@ export default function Shopping() {
             <div className="flex flex-wrap -m-4">
               <div className="grid grid-cols-1 md:grid-cols-4">
                 {listProduct.map((data: any, index) => (
-                  <div 
-                  key={index+1}
-                  className="p-4 w-full">
-                    <div className=" relative h-48 rounded">
-                      <Image width={420} height={260} src={data.img} alt="" />
-                    </div>
-                    <div className="mt-4">
-                      <h2 className="text-gray-900 title-font text-lg font-medium">
-                        {data.title}
-                      </h2>
-                      <p className="mt-1">{data.price}</p>
-                    </div>
+                  <div key={index + 1} className="p-4 w-full">
+                    <Link href={`/detail_pilih/${data.id}`}>
+                      <div className=" relative h-48 rounded">
+                        <Image width={420} height={260} src={data.img} alt="" />
+                      </div>
+                      <div className="mt-4">
+                        <h2 className="text-gray-900 title-font text-lg font-medium">
+                          {data.title}
+                        </h2>
+                        <p className="mt-1">{data.price}</p>
+                      </div>
+                    </Link>
                   </div>
                 ))}
               </div>
