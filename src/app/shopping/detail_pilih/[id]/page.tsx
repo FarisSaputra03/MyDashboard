@@ -91,7 +91,7 @@ export default function Detail_Pilih() {
               </div>
               <h1 className="text-black font-medium">Hi, User</h1>
               <p>
-                <Link href={"/cart"}>
+                <Link href={"/shopping/cart"}>
                 <BsCart4 size="2rem" />
                 </Link>
               </p>

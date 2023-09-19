@@ -26,8 +26,8 @@ export default function Sidebar() {
     },
   ];
   return (
-    <div className="bg-slate-500">
-      <div className="min-h-screen flex flex-col flex-auto flex-shrink-0 antialiased bg-gray-100 text-gray-800">
+    <div className="bg-white">
+      <div className="min-h-screen flex flex-col flex-auto flex-shrink-0 antialiased bg-white text-gray-800">
         <div className="shadow-md flex flex-col top-0 left-0 w-64 bg-white h-full border-r">
           <div className="flex m-8 items-center justify-center h-14 ">
             <Image width={60} height={60} src="/img/bag.png" alt="" />

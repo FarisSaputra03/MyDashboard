@@ -44,7 +44,7 @@ export default function Transactions() {
               role="tab">
               Sell Product
             </button>
-            <Link href={"/detailstrasactions"}>
+            <Link href={"/dashboard/detailstrasactions"}>
             <button
               onClick={() => {
                 setSelectedTitle("Buy Product");
@@ -67,7 +67,7 @@ export default function Transactions() {
       </div>
       <div>
         <div className="p-2 mt-6 w-full">
-          <Link href="/detailstrasactions">
+          <Link href="/dashboard/detailstrasactions">
             <div className="h-full justify-between w-full mt-6 flex items-center border-gray-200 border p-4 rounded-lg">
               <div className="flex items-center gap-1">
                 <Image width={50} height={50} src="/img/kopi.jpg" alt="" />

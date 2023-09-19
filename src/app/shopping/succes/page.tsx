@@ -18,7 +18,7 @@ export default function succes() {
           <p className="flex justify-center text-xs font-medium">
           kami akan menginformasikan resi secepat mungkin!
           </p>
-          <Link href={'dashboard'}>
+          <Link href={'/dashboard'}>
             <button className='w-full text-white bg-green-500 border-0 mt-5 py-2 px-8 focus:outline-none hover:bg-green-600 rounded-lg text-lg'>
               My dashboard
             </button>

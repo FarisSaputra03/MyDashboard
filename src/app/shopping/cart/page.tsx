@@ -53,7 +53,7 @@ export default function cart() {
               </div>
               <h1 className="text-black font-medium">Hi, User</h1>
               <p>
-                <Link href={"/cart"}>
+                <Link href={"/shopping/cart"}>
                   <BsCart4 size="2rem" />
                 </Link>
               </p>
@@ -203,7 +203,7 @@ export default function cart() {
                   $392,409
                   <p className="text-gray-500 font-semibold text-sm">Total</p>
                 </p>
-                <Link href={"/succes"}>
+                <Link href={"/shopping/succes"}>
                   <button className="text-white inline-flex items-center bg-green-500 border-0 py-2 px-5 rounded text-base mt-4 md:mt-0">
                     Checkout Now
                   </button>

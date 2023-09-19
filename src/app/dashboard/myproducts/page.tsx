@@ -64,7 +64,7 @@ export default function MyProducts() {
       <div className="mb-5">
         {/* <p className='text-gray-400'>Manage it well and get money</p> */}
         <div>
-          <Link href={"/create-product"}>
+          <Link href={"/dashboard/create-product"}>
           <button
             type="button"
             className="text-white bg-green-500 border-0 mt-6 py-2 px-8 focus:outline-none hover:bg-green-600 rounded-lg text-lg">
