@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { BsCart4 } from "react-icons/bs";
 import { useParams } from "next/navigation";
+import Link from "next/link";
 export default function Detail_Pilih() {
   const params = useParams();
   const [selectProduk, setSelectProduk] = useState<any>([]);
@@ -84,11 +85,15 @@ export default function Detail_Pilih() {
           <div className="gap-10">
             <div className="flex gap-5 flex-row">
               <div>
-                <Image width={50} height={50} src="/img/human.jpeg" alt="" />
+                <Image 
+                className="rounded-full"
+                width={50} height={50} src="/img/human.jpeg" alt="" />
               </div>
               <h1 className="text-black font-medium">Hi, User</h1>
               <p>
+                <Link href={"/cart"}>
                 <BsCart4 size="2rem" />
+                </Link>
               </p>
             </div>
           </div>
