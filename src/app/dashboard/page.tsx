@@ -43,13 +43,13 @@ export default function Dashboard() {
         <div className="flex justify-between pt-6">
           {listCategory.map((data: any, index) => (
             <div key={index + 1} className="flex justify-between -m-4">
-              <div className="p-4 w-auto">
-                <div className="border border-gray-200  p-6 rounded-lg">
-                  <h2 className="flex items-center gap-1 text-lg text-gray-400 font-medium title-font mb-2">
+              <div className=" w-full">
+                <div className="border border-gray-200  py-2 px-20 rounded-lg">
+                  <h2 className="flex text-lg text-gray-400 font-medium title-font">
                     {data.title}
                   </h2>
                   <div className="flex justify-center">
-                    <p className="font-bold leading-relaxed text-5xl">
+                    <p className="font-bold leading-relaxed text-xl">
                       {data.price}
                     </p>
                   </div>

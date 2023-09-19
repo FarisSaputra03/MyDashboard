@@ -10,25 +10,25 @@ export default function Sidebar() {
     },
     {
       title: "My Products",
-      href: "/myproducts",
+      href: "/dashboard/myproducts",
     },
     {
       title: "Transactions",
-      href: "/transactions",
+      href: "/dashboard/transactions",
     },
     {
       title: "Store Settings",
-      href: "/storesettings",
+      href: "/dashboard/storesettings",
     },
     {
       title: "My Account",
-      href: "/myaccount",
+      href: "/dashboard/myaccount",
     },
   ];
   return (
     <div className="bg-slate-500">
       <div className="min-h-screen flex flex-col flex-auto flex-shrink-0 antialiased bg-gray-100 text-gray-800">
-        <div className="shadow-md fixed flex flex-col top-0 left-0 w-64 bg-white h-full border-r">
+        <div className="shadow-md flex flex-col top-0 left-0 w-64 bg-white h-full border-r">
           <div className="flex m-8 items-center justify-center h-14 ">
             <Image width={60} height={60} src="/img/bag.png" alt="" />
           </div>

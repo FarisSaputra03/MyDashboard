@@ -93,15 +93,15 @@ export default function Shopping() {
       {
         //navbar
         <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-          <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+          <div className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
             <div>
               <Image width={50} height={50} src="/img/bag.png" alt="" />
             </div>
-          </a>
+          </div>
           <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
-            <a className="mr-5 text-orange-500 hover:text-orange-900">Home</a>
-            <a className="mr-5 hover:text-gray-900">Categories</a>
-            <a className="mr-5 hover:text-gray-900">Rewards</a>
+            <p className="mr-5 text-orange-500 hover:text-orange-900">Home</p>
+            <p className="mr-5 hover:text-gray-900">Categories</p>
+            <p className="mr-5 hover:text-gray-900">Rewards</p>
           </nav>
           <div className="gap-10">
             <button className="text-black inline-flex items-center bg-white border-0 py-1 px-3 focus:outline-none hover:bg-gray-100 rounded text-base mt-4 md:mt-0">
@@ -156,7 +156,7 @@ export default function Shopping() {
               <div className="grid grid-cols-1 md:grid-cols-4">
                 {listProduct.map((data: any, index) => (
                   <div key={index + 1} className="p-4 w-full">
-                    <Link href={`/detail_pilih/${data.id}`}>
+                    <Link href={`/shopping/detail_pilih/${data.id}`}>
                       <div className=" relative h-48 rounded">
                         <Image width={420} height={260} src={data.img} alt="" />
                       </div>
