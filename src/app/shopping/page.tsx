@@ -89,7 +89,7 @@ export default function Shopping() {
     filterProduk(selectedTitle);
   }, []);
   return (
-    <div className="text-gray-600 body-font">
+    <div className="">
       {
         //navbar
         <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
@@ -115,21 +115,21 @@ export default function Shopping() {
       }
       {
         /* // Picture */
-        <div className="flex justify-center  rounded-lg h-64 overflow-hidden">
+        <div className="flex justify-center  rounded-lg h-64">
           <Image width={952} height={360} src="/img/shopping.jpg" alt="" />
         </div>
       }
       {
-        <section className="text-gray-600 body-font">
-          <div className="container px-5 py-24 mx-auto">
-            <h1 className="font-bold text-xl pb-8 text-black">
-              Trend Categories
-            </h1>
+        <div>
+          <div className="container mx-auto py-10">
+            <h1 className="font-bold text-lg text-black">Trend Categories</h1>
+          </div>
+          <div className="container  ml-8">
             <div className="flex flex-wrap -m-4 text-center">
-              <div className="grid grid-cols-1 md:grid-cols-6 ml-4 gap-20">
+              <div className="grid grid-cols-2 md:grid-cols-6 ml-4 gap-20">
                 {listTrend.map((data: any, index) => (
-                  <div key={index + 1} className="w-[134px] h-[155px]">
-                    <div className="border-2 border-gray-200 px-2 py-5 rounded-lg">
+                  <div key={index + 1} className="w-36">
+                    <div className="border-2 border-gray-200  py-5 rounded-lg">
                       <div className="flex justify-center">
                         <Image width={80} height={80} src={data.img} alt="" />
                       </div>
@@ -142,37 +142,40 @@ export default function Shopping() {
               </div>
             </div>
           </div>
-        </section>
+        </div>
       }
       {
-        <section className="text-gray-600 body-font">
-          <div className="container px-5 py-24 mx-auto">
-            <div>
-              <h1 className="text-black font-semibold py-2 text-xl">
-                New Products
-              </h1>
-            </div>
-            <div className="flex flex-wrap -m-4">
-              <div className="grid grid-cols-1 md:grid-cols-4">
-                {listProduct.map((data: any, index) => (
-                  <div key={index + 1} className="p-4 w-full">
-                    <Link href={`/shopping/detail_pilih/${data.id}`}>
-                      <div className=" relative h-48 rounded">
-                        <Image width={420} height={260} src={data.img} alt="" />
-                      </div>
-                      <div className="mt-4">
-                        <h2 className="text-gray-900 title-font text-lg font-medium">
-                          {data.title}
-                        </h2>
-                        <p className="mt-1">{data.price}</p>
-                      </div>
-                    </Link>
-                  </div>
-                ))}
+        <div>
+          <div className="container mx-auto py-10">
+            <h1 className="font-bold text-lg text-black">New Products</h1>
+            <div className="container">
+              <div className="flex flex-wrap -m-4 items-center">
+                <div className="grid grid-cols-2 md:grid-cols-4">
+                  {listProduct.map((data: any, index) => (
+                    <div key={index + 1} className="p-4">
+                      <Link href={`/shopping/detail_pilih/${data.id}`}>
+                        <div>
+                          <Image
+                            width={420}
+                            height={260}
+                            src={data.img}
+                            alt=""
+                          />
+                        </div>
+                        <div className="mt-2">
+                          <h2 className="text-gray-900 title-font text-lg font-medium">
+                            {data.title}
+                          </h2>
+                          <p className="mt-1">{data.price}</p>
+                        </div>
+                      </Link>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
-        </section>
+        </div>
       }
     </div>
   );

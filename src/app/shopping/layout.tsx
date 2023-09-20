@@ -26,41 +26,43 @@ export default function RootLayout({
   const [sidebar, setSideBar] = useState(true);
 
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <div
-          className={`  h-60 w-full p-2 bg-gray-400 fixed ${
-            showMenu ? "flex flex-col" : "hidden"
-          }`}>
-          <div className="flex  justify-between">
-            <Image width={100} height={100} src="/img/bag.png" alt="" />
-            <button className="" onClick={() => setShowMenu(false)}>
-              X
-            </button>
-          </div>
-          <div className="pt-2">
-            <p className="pb-2">Home</p>
-            <hr />
-            <p className="pb-2">Categories</p>
-            <hr />
-            <p className="pb-2">Rewards</p>
-            <hr />
-          </div>
-          <div className="pt-3">
-            <button className="w-40 text-white bg-green-500 border-0 py-2 px-8 focus:outline-none hover:bg-green-600 rounded-lg text-lg">
-              Sign Up
-            </button>
-          </div>
+    // <html lang="en">
+    //   <body className={inter.className}>
+    <>
+      <div
+        className={`  h-60 w-full p-2 bg-gray-400 fixed ${
+          showMenu ? "flex flex-col" : "hidden"
+        }`}
+      >
+        <div className="flex  justify-between">
+          <Image width={100} height={100} src="/img/bag.png" alt="" />
+          <button className="" onClick={() => setShowMenu(false)}>
+            X
+          </button>
         </div>
+        <div className="pt-2">
+          <p className="pb-2">Home</p>
+          <hr />
+          <p className="pb-2">Categories</p>
+          <hr />
+          <p className="pb-2">Rewards</p>
+          <hr />
+        </div>
+        <div className="pt-3">
+          <button className="w-40 text-white bg-green-500 border-0 py-2 px-8 focus:outline-none hover:bg-green-600 rounded-lg text-lg">
+            Sign Up
+          </button>
+        </div>
+      </div>
 
-        {pathname == "/" || pathname == "/signup" ? (
-          <Header onClick={() => setShowMenu(true)} />
-        ) : (
-          <></>
-        )}
+      {pathname == "/" || pathname == "/signup" ? (
+        <Header onClick={() => setShowMenu(true)} />
+      ) : (
+        <></>
+      )}
 
-        <div className={`flex`}>
-          {/* {pathname !== "/" &&
+      <div className={`flex`}>
+        {/* {pathname !== "/" &&
           pathname !== "/signup" &&
           pathname !== "/shopping" &&
           pathname !== "/detail_pilih" &&
@@ -73,9 +75,9 @@ export default function RootLayout({
             <></>
           )} */}
 
-          <div className={`${sidebar ? "" : ""} w-screen`}>
-            <div className="flex justify-center">
-              {/* {pathname !== "/" &&
+        <div className={`${sidebar ? "" : ""} w-screen`}>
+          <div className="flex justify-center">
+            {/* {pathname !== "/" &&
               pathname !== "/signup" &&
               pathname !== "/shopping" &&
               pathname !== "/detail_pilih" &&
@@ -84,19 +86,20 @@ export default function RootLayout({
               ) : (
                 <></>
               )} */}
-            </div>
-            {children}
           </div>
+          {children}
         </div>
+      </div>
 
-        {/* {pathname == "/" ||
+      {
         pathname == "/shopping" ||   
         pathname == "/detail_pilih" ||  
         pathname == "/cart" ||  
-        pathname == "/succes" ||  
-        pathname == "/signup" ? 
-         <Footer /> : <></>} */}
-      </body>
-    </html>
+        pathname == "/succes" ?
+         <Footer /> : <></>}
+    </>
+
+    //   </body>
+    // </html>
   );
 }

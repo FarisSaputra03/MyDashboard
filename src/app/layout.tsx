@@ -91,10 +91,6 @@ export default function RootLayout({
         </div>
 
         {pathname == "/" ||
-        pathname == "/shopping" ||   
-        pathname == "/detail_pilih" ||  
-        pathname == "/cart" ||  
-        pathname == "/succes" ||  
         pathname == "/signup" ? 
          <Footer /> : <></>}
       </body>
